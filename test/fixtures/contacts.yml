@@ -1,11 +1,9 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+aaron:
+  firstname: 'Aaron'
+  lastname: 'Sumner'
+  email: 'aaron@everydayrails.com'
 
-one:
-  firstname: MyString
-  lastname: MyString
-  email: MyString
-
-two:
-  firstname: MyString
-  lastname: MyString
-  email: MyString
+john:
+  firstname: 'John'
+  lastname: 'Doe'
+  email: 'johndoe@nobody.org'
