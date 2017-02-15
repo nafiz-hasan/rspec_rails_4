@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_action :authenticate, except: [:index, :show]
+  # before_action :authenticate, except: [:index, :show]
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   # GET /contacts
@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
     if params[:letter]
       @contacts = Contact.by_letter(params[:letter])
     else
-      @contacts = Contact.order("lastname, firstname")
+      @contacts = Contact.order('lastname, firstname')
     end
   end
 
@@ -70,14 +70,15 @@ class ContactsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_contact
-      @contact = Contact.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def contact_params
-      params.require(:contact).permit(:firstname, :lastname, :email,
-        :phones_attributes => [:id, :phone, :phone_type])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def contact_params
+    params.require(:contact).permit(:firstname, :lastname, :email,
+      :phones_attributes => [:id, :phone, :phone_type])
+  end
 end

@@ -5,18 +5,18 @@ class ContactsControllerTest < ActionController::TestCase
     @contact = contacts(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get :index
     assert_response :success
     assert_not_nil assigns(:contacts)
   end
 
-  test "should get new" do
+  test 'should get new' do
     get :new
     assert_response :success
   end
 
-  test "should create contact" do
+  test 'should create contact' do
     assert_difference('Contact.count') do
       post :create, contact: { email: @contact.email, firstname: @contact.firstname, lastname: @contact.lastname }
     end
@@ -24,22 +24,22 @@ class ContactsControllerTest < ActionController::TestCase
     assert_redirected_to contact_path(assigns(:contact))
   end
 
-  test "should show contact" do
+  test 'should show contact' do
     get :show, id: @contact
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get :edit, id: @contact
     assert_response :success
   end
 
-  test "should update contact" do
+  test 'should update contact' do
     patch :update, id: @contact, contact: { email: @contact.email, firstname: @contact.firstname, lastname: @contact.lastname }
     assert_redirected_to contact_path(assigns(:contact))
   end
 
-  test "should destroy contact" do
+  test 'should destroy contact' do
     assert_difference('Contact.count', -1) do
       delete :destroy, id: @contact
     end
